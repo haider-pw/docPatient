@@ -12,7 +12,8 @@ class RolesTableSeeder extends Seeder
     public function run()
     {
         //Empty Table to empty the records if already exist.
-        DB::table('roles')->truncate();
+//        DB::table('roles')->truncate();
+        DB::table('roles')->delete();
         //Super Admin User
         DB::table('roles')->insert([
             'role' => 'Super Admin',

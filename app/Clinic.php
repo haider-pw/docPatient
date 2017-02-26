@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Clinic extends Model
 {
-    public function users()
+    public function doctors()
     {
         return $this->belongsToMany('App\Doctor');
     }

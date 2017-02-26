@@ -26,4 +26,25 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the doctor record if associated with the user.
+     */
+    public function doctor(){
+        return $this->hasOne('App\Doctor');
+    }
+
+    /**
+     * Get the guardian record if associated with the user.
+     */
+    public function guardian(){
+        return $this->hasOne('App\Guardian');
+    }
+
+    /**
+     * Get the patient record if associated with the user.
+     */
+    public function patient(){
+        return $this->hasOne('App\Patient');
+    }
 }

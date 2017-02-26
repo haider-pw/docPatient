@@ -15,6 +15,8 @@ class CreateClinicsTable extends Migration
     {
         Schema::create('clinics', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('doctor_id')->unsigned();
+            $table->foreign('doctor_id')->references('id')->on('doctors');
             $table->string('name',50);
             $table->string('off_days',120);
             $table->string('location',40);

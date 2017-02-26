@@ -12,7 +12,9 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         //Empty Table to empty the records if already exist.
-        DB::table('users')->truncate();
+//        DB::table('users')->truncate();
+        DB::table('users')->delete();
+
         //Super Admin User
         DB::table('users')->insert([
             'role_id' => 1,
