@@ -15,6 +15,7 @@ class DoctorController extends Controller
     {
 //        return App\User::all();
 //        return foo();
-        return view('admin.doctor.list');
+        $doctors = Doctor::all();
+        return view('admin.doctor.list',compact('doctors'));
     }
 }

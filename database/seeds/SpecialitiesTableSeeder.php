@@ -16,23 +16,23 @@ class SpecialitiesTableSeeder extends Seeder
         //Making an Array of Dummy Specialities for Now.
         $specialities = [
             [
-                'speciality'=> 'Pediatrician',
+                'name'=> 'Pediatrician',
                 'description' => 'treats infants, toddlers, children and teenagers'
             ],
             [
-                'speciality'=> 'Cardiologist',
+                'name'=> 'Cardiologist',
                 'description' => 'treats heart disease'
             ],
             [
-                'speciality'=> 'Hematologist/Oncologist',
+                'name'=> 'Hematologist/Oncologist',
                 'description' => 'treats diseases of the blood and blood-forming tissues (oncology including cancer and other tumors)'
             ],
             [
-                'speciality'=> 'Neurologist',
+                'name'=> 'Neurologist',
                 'description' => 'treats diseases and disorders of the nervous system.'
             ],
             [
-                'speciality'=> 'Psychiatrist',
+                'name'=> 'Psychiatrist',
                 'description' => 'treats patients with mental and emotional disorders.'
             ]
         ];
