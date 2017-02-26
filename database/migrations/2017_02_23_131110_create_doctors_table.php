@@ -16,6 +16,7 @@ class CreateDoctorsTable extends Migration
         Schema::create('doctors', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unique()->unsigned();
+            $table->string('avatar')->default('default-doctor.jpg');
             $table->tinyInteger('active'); //Eiter Doctor Profile is Active Or Not
             $table->integer('speciality_id'); //Speciality or Designation of the Doctor
             $table->string('pmdc_id'); //Medical License Number.

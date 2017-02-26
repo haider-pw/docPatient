@@ -15,4 +15,5 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');*/
 
 //Admin Section Imports
-mix.copy('resources/assets/admin/', 'public/assets/admin/',false);
+mix.copy('resources/assets/admin/', 'public/assets/admin/',false)
+    .version();

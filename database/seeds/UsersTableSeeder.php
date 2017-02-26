@@ -18,6 +18,7 @@ class UsersTableSeeder extends Seeder
         //Super Admin User
         DB::table('users')->insert([
             'role_id' => 1,
+            'gender_id' => 1,
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('admin'),

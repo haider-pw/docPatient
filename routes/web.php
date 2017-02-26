@@ -17,6 +17,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['namespace' => 'Admin','prefix' => 'admin','middleware' => 'auth'], function () {
-    Route::get('/', 'DashboardController@index');
+Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
+
+    //This Group will be under prefix of admins such has www.domain.com/admin/$controllerPath
+    Route::group(['prefix'=>'admin'],function(){
+
+        //Home or Dashboard of admin
+        Route::get('/', 'DashboardController@index');
+
+        //Routes To Manage Doctors
+        Route::get('doctors','DoctorController@index');
+    });
+
 });

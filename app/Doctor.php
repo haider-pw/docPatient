@@ -16,6 +16,6 @@ class Doctor extends Model
 
     public function speciality()
     {
-        return $this->hasOne('App\Speciality');
+        return $this->hasOne(Speciality::class);
     }
 }

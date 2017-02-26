@@ -31,20 +31,28 @@ class User extends Authenticatable
      * Get the doctor record if associated with the user.
      */
     public function doctor(){
-        return $this->hasOne('App\Doctor');
+        return $this->hasOne(Doctor::class);
     }
 
     /**
      * Get the guardian record if associated with the user.
      */
     public function guardian(){
-        return $this->hasOne('App\Guardian');
+        return $this->hasOne(Guardian::class);
     }
 
     /**
      * Get the patient record if associated with the user.
      */
     public function patient(){
-        return $this->hasOne('App\Patient');
+        return $this->hasOne(Patient::class);
+    }
+
+    public function roles(){
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function gender(){
+        return $this->hasOne(Gender::class);
     }
 }
