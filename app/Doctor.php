@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Doctor extends Model
 {
+
+    protected $fillable = [
+        'pmdc_id', 'avatar', 'speciality_id'
+    ];
+
     /**
      * The clinics that belong to the doctor.
      */

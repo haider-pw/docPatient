@@ -1,195 +1,115 @@
-<section class="sidebar">
-    <!-- Sidebar user panel -->
-    <div class="user-panel">
-        <div class="pull-left image">
-            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+<aside id="leftsidebar" class="sidebar">
+    <!-- User Info -->
+    <div class="user-info">
+        <div class="admin-image"> <img src="assets/admin/images/random-avatar7.jpg" alt=""> </div>
+        <div class="admin-action-info"> <span>Welcome</span>
+            <h3>Dr. John</h3>
+            <ul>
+                <li><a data-placement="bottom" title="Go to Inbox" href="mail-inbox.html"><i class="zmdi zmdi-email"></i></a></li>
+                <li><a data-placement="bottom" title="Go to Profile" href="profile.html"><i class="zmdi zmdi-account"></i></a></li>
+                <li><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings"></i></a></li>
+                <li>
+                    <a data-placement="bottom" title="Logout" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                        <i class="zmdi zmdi-sign-in"></i></a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
+            </ul>
         </div>
-        <div class="pull-left info">
-            <p>Alexander Pierce</p>
-            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        <div class="quick-stats">
+            <h5>Today Report</h5>
+            <ul>
+                <li><span>16<i>Patient</i></span></li>
+                <li><span>20<i>Panding</i></span></li>
+                <li><span>04<i>Visit</i></span></li>
+            </ul>
         </div>
     </div>
-    <!-- search form -->
-    <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-            <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-    </form>
-    <!-- /.search form -->
-    <!-- sidebar menu: : style can be found in sidebar.less -->
-    <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
-            <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-                <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-            </ul>
-        </li>
-        <li class="treeview">
-            <a href="#">
-                <i class="fa fa-files-o"></i>
-                <span>Layout Options</span>
-            <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-                <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="pages/widgets.html">
-                <i class="fa fa-th"></i> <span>Widgets</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
-            </span>
-            </a>
-        </li>
-        <li class="treeview">
-            <a href="#">
-                <i class="fa fa-pie-chart"></i>
-                <span>Charts</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-                <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-            </ul>
-        </li>
-        <li class="treeview">
-            <a href="#">
-                <i class="fa fa-laptop"></i>
-                <span>UI Elements</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-                <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-                <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-                <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-                <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-                <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-                <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
-            </ul>
-        </li>
-        <li class="treeview">
-            <a href="#">
-                <i class="fa fa-edit"></i> <span>Forms</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-                <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-                <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-                <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-            </ul>
-        </li>
-        <li class="treeview">
-            <a href="#">
-                <i class="fa fa-table"></i> <span>Tables</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-                <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-                <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="pages/calendar.html">
-                <i class="fa fa-calendar"></i> <span>Calendar</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-red">3</small>
-              <small class="label pull-right bg-blue">17</small>
-            </span>
-            </a>
-        </li>
-        <li>
-            <a href="pages/mailbox/mailbox.html">
-                <i class="fa fa-envelope"></i> <span>Mailbox</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">12</small>
-              <small class="label pull-right bg-green">16</small>
-              <small class="label pull-right bg-red">5</small>
-            </span>
-            </a>
-        </li>
-        <li class="treeview">
-            <a href="#">
-                <i class="fa fa-folder"></i> <span>Examples</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-                <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-                <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-                <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-                <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-                <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-                <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-                <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-                <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-                <li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
-            </ul>
-        </li>
-        <li class="treeview">
-            <a href="#">
-                <i class="fa fa-share"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-                <li>
-                    <a href="#"><i class="fa fa-circle-o"></i> Level One
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                        <li>
-                            <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                                <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-            </ul>
-        </li>
-        <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-        <li class="header">LABELS</li>
-        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
-    </ul>
-</section>
+    <!-- #User Info -->
+    <!-- Menu -->
+    <div class="menu">
+        <ul class="list">
+            <li class="header">MAIN NAVIGATION</li>
+            <li class="active open"><a href="index-2.html"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
+                <ul class="ml-menu">
+                    <li><a href="doctor-schedule.html">Doctor Schedule</a></li>
+                    <li><a href="book-appointment.html">Book Appointment</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Doctors</span> </a>
+                <ul class="ml-menu">
+                    <li><a href="doctors.html">All Doctors</a></li>
+                    <li><a href="add-doctor.html">Add Doctor</a></li>
+                    <li><a href="profile.html">Doctor Profile</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-o"></i><span>Patients</span> </a>
+                <ul class="ml-menu">
+                    <li><a href="patients.html">All Patients</a></li>
+                    <li><a href="add-patient.html">Add Patient</a></li>
+                    <li><a href="patient-profile.html">Patient Profile</a></li>
+                    <li><a href="patient-invoice.html">Patient Invoice</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-balance-wallet"></i><span>Payments</span> </a>
+                <ul class="ml-menu">
+                    <li> <a href="payments.html">Payments</a></li>
+                    <li> <a href="add-payments.html">Add Payment</a></li>
+                    <li> <a href="patient-invoice.html">Patient Invoice</a></li>
+                </ul>
+            </li>
+            <li><a href="reports.html"><i class="zmdi zmdi-file-text"></i><span>Reports</span></a></li>
+            <li><a href="widgets.html"><i class="zmdi zmdi-delicious"></i><span>Widgets</span></a></li>
+            <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-copy"></i><span>Extra Pages</span> </a>
+                <ul class="ml-menu">
+                    <li> <a href="sign-in.html">Sign In</a> </li>
+                    <li> <a href="sign-up.html">Sign Up</a> </li>
+                    <li> <a href="forgot-password.html">Forgot Password</a> </li>
+                    <li> <a href="404.html">Page 404</a> </li>
+                    <li> <a href="500.html">Page 500</a> </li>
+                    <li> <a href="page-offline.html">Page Offline</a> </li>
+                    <li> <a href="locked.html">Locked Screen</a> </li>
+                    <li> <a href="blank.html">Blank Page</a> </li>
+                </ul>
+            </li>
+            <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-swap-alt"></i><span>User Interface (UI)</span> </a>
+                <ul class="ml-menu">
+                    <li> <a href="typography.html">Typography</a> </li>
+                    <li> <a href="helper-classes.html">Helper Classes</a></li>
+                    <li> <a href="alerts.html">Alerts</a> </li>
+                    <li> <a href="animations.html">Animations</a> </li>
+                    <li> <a href="badges.html">Badges</a> </li>
+                    <li> <a href="breadcrumbs.html">Breadcrumbs</a> </li>
+                    <li> <a href="buttons.html">Buttons</a> </li>
+                    <li> <a href="collapse.html">Collapse</a> </li>
+                    <li> <a href="colors.html">Colors</a> </li>
+                    <li> <a href="dialogs.html">Dialogs</a> </li>
+                    <li> <a href="icons.html">Icons</a> </li>
+                    <li> <a href="labels.html">Labels</a> </li>
+                    <li> <a href="list-group.html">List Group</a> </li>
+                    <li> <a href="media-object.html">Media Object</a> </li>
+                    <li> <a href="modals.html">Modals</a> </li>
+                    <li> <a href="notifications.html">Notifications</a> </li>
+                    <li> <a href="pagination.html">Pagination</a> </li>
+                    <li> <a href="preloaders.html">Preloaders</a> </li>
+                    <li> <a href="progressbars.html">Progress Bars</a> </li>
+                    <li> <a href="range-sliders.html">Range Sliders</a> </li>
+                    <li> <a href="sortable-nestable.html">Sortable & Nestable</a> </li>
+                    <li> <a href="tabs.html">Tabs</a> </li>
+                    <li> <a href="thumbnails.html">Thumbnails</a> </li>
+                    <li> <a href="tooltips-popovers.html">Tooltips & Popovers</a> </li>
+                    <li> <a href="waves.html">Waves</a> </li>
+                </ul>
+            </li>
+            <li class="header">LABELS</li>
+            <li> <a href="javascript:void(0);"><i class="zmdi zmdi-chart-donut col-red"></i><span>Important</span> </a> </li>
+            <li> <a href="javascript:void(0);"><i class="zmdi zmdi-chart-donut col-amber"></i><span>Warning</span> </a> </li>
+            <li> <a href="javascript:void(0);"><i class="zmdi zmdi-chart-donut col-blue"></i><span>Information</span> </a> </li>
+        </ul>
+    </div>
+    <!-- #Menu -->
+</aside>
