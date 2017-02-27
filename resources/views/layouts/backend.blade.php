@@ -13,6 +13,7 @@
 
     <!-- Swift Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ URL::asset('assets/admin/css/themes/all-themes.css') }}" rel="stylesheet" />
+    @yield('styles')
 </head>
 
 <body class="theme-cyan">
@@ -47,41 +48,41 @@
     <div class="morphsearch-content">
         <div class="dummy-column">
             <h2>People</h2>
-            <a class="dummy-media-object" href="#"> <img class="round" src="assets/admin/images/random-avatar1.jpg" alt=""/>
+            <a class="dummy-media-object" href="#"> <img class="round" src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar1.jpg" alt=""/>
                 <h3>Sara Soueidan</h3>
-            </a> <a class="dummy-media-object" href="#"> <img class="round" src="assets/admin/images/random-avatar4.jpg" alt=""/>
+            </a> <a class="dummy-media-object" href="#"> <img class="round" src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar4.jpg" alt=""/>
                 <h3>Rachel Smith</h3>
-            </a> <a class="dummy-media-object" href="#"> <img class="round" src="assets/admin/images/random-avatar3.jpg" alt=""/>
+            </a> <a class="dummy-media-object" href="#"> <img class="round" src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar3.jpg" alt=""/>
                 <h3>Peter Finlan</h3>
-            </a> <a class="dummy-media-object" href="#"> <img class="round" src="assets/admin/images/random-avatar6.jpg" alt=""/>
+            </a> <a class="dummy-media-object" href="#"> <img class="round" src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar6.jpg" alt=""/>
                 <h3>Patrick Cox</h3>
-            </a> <a class="dummy-media-object" href="#"> <img class="round" src="assets/admin/images/random-avatar5.jpg" alt=""/>
+            </a> <a class="dummy-media-object" href="#"> <img class="round" src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar5.jpg" alt=""/>
                 <h3>Tim Holman</h3>
             </a></div>
         <div class="dummy-column">
             <h2>Popular</h2>
-            <a class="dummy-media-object" href="#"> <img class="round" src="assets/admin/images/random-avatar1.jpg" alt=""/>
+            <a class="dummy-media-object" href="#"> <img class="round" src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar1.jpg" alt=""/>
                 <h3>Sara Soueidan</h3>
-            </a> <a class="dummy-media-object" href="#"> <img class="round" src="assets/admin/images/random-avatar4.jpg" alt=""/>
+            </a> <a class="dummy-media-object" href="#"> <img class="round" src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar4.jpg" alt=""/>
                 <h3>Rachel Smith</h3>
-            </a> <a class="dummy-media-object" href="#"> <img class="round" src="assets/admin/images/random-avatar3.jpg" alt=""/>
+            </a> <a class="dummy-media-object" href="#"> <img class="round" src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar3.jpg" alt=""/>
                 <h3>Peter Finlan</h3>
-            </a> <a class="dummy-media-object" href="#"> <img class="round" src="assets/admin/images/random-avatar6.jpg" alt=""/>
+            </a> <a class="dummy-media-object" href="#"> <img class="round" src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar6.jpg" alt=""/>
                 <h3>Patrick Cox</h3>
-            </a> <a class="dummy-media-object" href="#"> <img class="round" src="assets/admin/images/random-avatar5.jpg" alt=""/>
+            </a> <a class="dummy-media-object" href="#"> <img class="round" src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar5.jpg" alt=""/>
                 <h3>Tim Holman</h3>
             </a> </div>
         <div class="dummy-column">
             <h2>Recent</h2>
-            <a class="dummy-media-object" href="#"> <img class="round" src="assets/admin/images/random-avatar1.jpg" alt=""/>
+            <a class="dummy-media-object" href="#"> <img class="round" src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar1.jpg" alt=""/>
                 <h3>Sara Soueidan</h3>
-            </a> <a class="dummy-media-object" href="#"> <img class="round" src="assets/admin/images/random-avatar4.jpg" alt=""/>
+            </a> <a class="dummy-media-object" href="#"> <img class="round" src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar4.jpg" alt=""/>
                 <h3>Rachel Smith</h3>
-            </a> <a class="dummy-media-object" href="#"> <img class="round" src="assets/admin/images/random-avatar3.jpg" alt=""/>
+            </a> <a class="dummy-media-object" href="#"> <img class="round" src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar3.jpg" alt=""/>
                 <h3>Peter Finlan</h3>
-            </a> <a class="dummy-media-object" href="#"> <img class="round" src="assets/admin/images/random-avatar6.jpg" alt=""/>
+            </a> <a class="dummy-media-object" href="#"> <img class="round" src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar6.jpg" alt=""/>
                 <h3>Patrick Cox</h3>
-            </a> <a class="dummy-media-object" href="#"> <img class="round" src="assets/admin/images/random-avatar5.jpg" alt=""/>
+            </a> <a class="dummy-media-object" href="#"> <img class="round" src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar5.jpg" alt=""/>
                 <h3>Tim Holman</h3>
             </a></div>
     </div>
@@ -199,7 +200,7 @@
     <aside id="leftsidebar" class="sidebar">
         <!-- User Info -->
         <div class="user-info">
-            <div class="admin-image"> <img src="assets/admin/images/random-avatar7.jpg" alt=""> </div>
+            <div class="admin-image"> <img src="<?php echo url('/') ?>/assets/admin/images/random-avatar7.jpg" alt=""> </div>
             <div class="admin-action-info"> <span>Welcome</span>
                 <h3>Dr. John</h3>
                 <ul>
@@ -355,19 +356,19 @@
                     <h6>Recent</h6>
                     <ul>
                         <li class="online">
-                            <div class="media"> <a class="pull-left" role="button" tabindex="0"> <img class="media-object " src="assets/admin/images/random-avatar4.jpg" alt=""> </a>
+                            <div class="media"> <a class="pull-left" role="button" tabindex="0"> <img class="media-object " src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar4.jpg" alt=""> </a>
                                 <div class="media-body"> <span class="name">Claire Sassu</span> <span class="message">Can you share the...</span> <span class="badge badge-outline status"></span> </div>
                             </div>
                         </li>
                         <li class="online">
-                            <div class="media"> <a class="pull-left" role="button" tabindex="0"> <img class="media-object " src="assets/admin/images/random-avatar5.jpg" alt=""> </a>
+                            <div class="media"> <a class="pull-left" role="button" tabindex="0"> <img class="media-object " src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar5.jpg" alt=""> </a>
                                 <div class="media-body">
                                     <div class="media-body"> <span class="name">Maggie jackson</span> <span class="message">Can you share the...</span> <span class="badge badge-outline status"></span> </div>
                                 </div>
                             </div>
                         </li>
                         <li class="online">
-                            <div class="media"> <a class="pull-left" role="button" tabindex="0"> <img class="media-object " src="assets/admin/images/random-avatar3.jpg" alt=""> </a>
+                            <div class="media"> <a class="pull-left" role="button" tabindex="0"> <img class="media-object " src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar3.jpg" alt=""> </a>
                                 <div class="media-body">
                                     <div class="media-body"> <span class="name">Joel King</span> <span class="message">Ready for the meeti...</span> <span class="badge badge-outline status"></span> </div>
                                 </div>
@@ -377,21 +378,21 @@
                     <h6>Contacts</h6>
                     <ul>
                         <li class="offline">
-                            <div class="media"> <a class="pull-left" role="button" tabindex="0"> <img class="media-object " src="assets/admin/images/random-avatar4.jpg" alt=""> </a>
+                            <div class="media"> <a class="pull-left" role="button" tabindex="0"> <img class="media-object " src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar4.jpg" alt=""> </a>
                                 <div class="media-body">
                                     <div class="media-body"> <span class="name">Joel King</span> <span class="badge badge-outline status"></span> </div>
                                 </div>
                             </div>
                         </li>
                         <li class="online">
-                            <div class="media"> <a class="pull-left" role="button" tabindex="0"> <img class="media-object " src="assets/admin/images/random-avatar5.jpg" alt=""> </a>
+                            <div class="media"> <a class="pull-left" role="button" tabindex="0"> <img class="media-object " src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar5.jpg" alt=""> </a>
                                 <div class="media-body">
                                     <div class="media-body"> <span class="name">Joel King</span> <span class="badge badge-outline status"></span> </div>
                                 </div>
                             </div>
                         </li>
                         <li class="offline">
-                            <div class="media"> <a class="pull-left " role="button" tabindex="0"> <img class="media-object " src="assets/admin/images/random-avatar6.jpg" alt=""> </a>
+                            <div class="media"> <a class="pull-left " role="button" tabindex="0"> <img class="media-object " src="<?php echo url('/') ?>/assets/admin/assets/images/random-avatar6.jpg" alt=""> </a>
                                 <div class="media-body">
                                     <div class="media-body"> <span class="name">Joel King</span> <span class="badge badge-outline status"></span> </div>
                                 </div>
@@ -468,6 +469,6 @@
 <script src="{{URL::asset('assets/admin/bundles/libscripts.bundle.js')}}"></script> <!-- Lib Scripts Plugin Js -->
 <script src="{{URL::asset('assets/admin/bundles/vendorscripts.bundle.js')}}"></script> <!-- Lib Scripts Plugin Js -->
 <script src="{{URL::asset('assets/admin/bundles/mainscripts.bundle.js')}}"></script><!-- Custom Js -->
-<script src="{{URL::asset('assets/js/pages/index.js')}}"></script>
+<script src="{{URL::asset('assets/admin/js/pages/index.js')}}"></script>
 </body>
 </html>
