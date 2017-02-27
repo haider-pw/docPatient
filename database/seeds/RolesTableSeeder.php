@@ -14,10 +14,28 @@ class RolesTableSeeder extends Seeder
         //Empty Table to empty the records if already exist.
 //        DB::table('roles')->truncate();
         DB::table('roles')->delete();
+
+        //Array to Seed in to the Database
+        $roles = [
+            [
+                'name'=> 'Super Admin',
+                'description' => 'This Role will have Access to almost all the Modules of the Application.'
+            ],
+            [
+                'name'=> 'Doctor',
+                'description' => 'This role will have access to the doctors modules'
+            ],
+            [
+                'name'=> 'Patient',
+                'description' => 'This role will have access to the patients modules'
+            ],
+            [
+                'name'=> 'Guardian',
+                'description' => 'This role will have access to the guardian modules'
+            ]
+        ];
+
         //Super Admin User
-        DB::table('roles')->insert([
-            'role' => 'Super Admin',
-            'description' => 'This Role Belongs to the Super Admin'
-        ]);
+        DB::table('roles')->insert($roles);
     }
 }
