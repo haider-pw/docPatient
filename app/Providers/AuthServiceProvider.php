@@ -27,8 +27,8 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         //fetch all the available permissions
-        foreach($this->getPermissions() as $permission){
-            
-        }
+        /*foreach($this->getPermissions() as $permission){
+
+        }*/
     }
 }
