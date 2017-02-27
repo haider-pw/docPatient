@@ -14,8 +14,10 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
-
+    $genderMale = App\Gender::first()->id;
     return [
+        'role_id' => 1,
+        'gender_id'=>rand($genderMale,($genderMale+1)),
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
@@ -26,9 +28,13 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 //For Doctor
 $factory->define(App\Doctor::class, function (Faker\Generator $faker) {
+    $user = factory(App\User::class)->create();
+    $genderMale = App\Gender::first()->id;
     return [
+        'user_id' => $user->id,
+        'avatar' => ($user->gender_id === $genderMale)?'default_mDoctor.jpg':'default_fDoctor.jpg',
         'active' => 1,
-        'speciality' => 'medical',
+        'speciality_id' => rand(1,5),
         'pmdc_id'=> str_random(8)
     ];
 });
