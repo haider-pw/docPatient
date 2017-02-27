@@ -18,4 +18,8 @@ class DoctorController extends Controller{
     public function create(){
         return view('admin.doctor.add');
     }
+    public function store(){
+        dd(request()->all());
+        return request()->all();
+    }
 }

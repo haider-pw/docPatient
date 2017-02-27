@@ -28,6 +28,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
         //Routes To Manage Doctors
         Route::get('doctors','DoctorController@index');
         Route::get('doctor/add','DoctorController@create');
+        Route::post('doctor/save','DoctorController@store');
     });
 
 });
