@@ -26,7 +26,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
         Route::get('/', 'DashboardController@index');
 
         //Routes To Manage Doctors
-        Route::get('doctors','DoctorController@index');
+        Route::get('doctors','DoctorController@index')->middleware(['role:admin|doctor,view_doctors_list']);
     });
 
 });
