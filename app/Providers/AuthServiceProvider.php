@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Providers;
-
-use App\Permission;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -26,9 +24,5 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //fetch all the available permissions
-        /*foreach($this->getPermissions() as $permission){
-
-        }*/
     }
 }
