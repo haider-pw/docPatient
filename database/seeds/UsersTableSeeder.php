@@ -25,5 +25,14 @@ class UsersTableSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => bcrypt('admin'),
         ]);
+
+        DB::table('users')->insert([
+            'role_id' => 1,
+            'gender_id' => 1,
+            'cnic'=>'17301-1234567-2',
+            'name' => 'ahsan',
+            'email' => 'ahsandev.creative@gmail.com',
+            'password' => bcrypt('admin'),
+        ]);
     }
 }
