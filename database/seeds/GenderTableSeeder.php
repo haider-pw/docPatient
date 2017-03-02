@@ -19,8 +19,8 @@ class GenderTableSeeder extends Seeder
 
         //Array to Populate in Table
         $genders = [
-            ['gender' => 'Male','created_at'=>Carbon::now()],
-            ['gender' => 'Female','created_at'=>Carbon::now()]
+            ['name' => 'Male','created_at'=>Carbon::now()],
+            ['name' => 'Female','created_at'=>Carbon::now()]
         ];
 
         //Gender Table
