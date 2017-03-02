@@ -13,7 +13,6 @@ class GenderTableSeeder extends Seeder
     public function run()
     {
         //Remove Existing Records if Any.
-       // DB::table('gender')->delete();
         DB::table('gender')->truncate();
 
 

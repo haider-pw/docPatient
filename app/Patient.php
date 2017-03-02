@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Patient extends Model
 {
 
-    protected $table = "patients";
-
     public function diseases(){
-        return $this->hasMany(Diseases::class);
+        return $this->belongsToMany(Disease::class,'patient_has_diseases');
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

@@ -41,3 +41,14 @@ $factory->define(App\Doctor::class, function (Faker\Generator $faker) {
         'pmdc_id'=> str_random(8)
     ];
 });
+
+//For Patients
+$factory->define(App\Patient::class, function (Faker\Generator $faker) {
+    $user = factory(App\User::class)->create();
+    $genderMale = App\Gender::first()->id;
+    $user->assignRole('patient');
+    return [
+        'user_id' => $user->id,
+        'avatar' => ($user->gender_id === $genderMale)?'default_mPatient.jpg':'default_fPatient.jpg'
+    ];
+});

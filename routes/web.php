@@ -31,9 +31,9 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
         Route::post('doctor/save','DoctorController@store');
     });
 
-    //List Childrent
-/*    Route::get('children', 'ChildrenController');
-    //List Patients
-    Route::get('patients', 'PatientsController');*/
+    //Lists Childrent
+    Route::get('children', 'ChildrenController@index');
+    //Lists Patients
+    Route::get('patients', 'PatientsController@index');
 
 });
