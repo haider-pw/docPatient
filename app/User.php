@@ -47,9 +47,9 @@ class User extends Authenticatable
     /**
      * Get the patient record if associated with the user.
      */
-    public function patient(){
+   /* public function patient(){
         return $this->hasOne(Patient::class);
-    }
+    }*/
 
     public function gender(){
         return $this->hasOne(Gender::class);
