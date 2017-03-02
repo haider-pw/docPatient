@@ -16,6 +16,32 @@
                 <h2>All Doctors</h2>
                 <small class="text-muted">Welcome to Swift application</small>
             </div>
+            <div class"filters">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <select class="form-control">
+                                    @foreach($specialities as $Speciality)
+                                        <option value="{{$Speciality->id}}" >{{$Speciality->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <select class="form-control">
+                                    @foreach($specialities as $Speciality)
+                                        <option value="{{$Speciality->id}}" >{{$Speciality->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
             <div class="row clearfix">
 
                 {{--Doctors Listing Goes Here--}}
@@ -39,7 +65,7 @@
                                         <i class="zmdi zmdi-info" title="verified user"></i>
                                     </div>
 
-                                    <div class="">
+                                    <div class="" >
                                         <h4 class="m-b-5">{{$doctor->user->name}}</h4>
                                         <p class="text-muted">{{$doctor->speciality->name}}<span> <a href="#" class="text-pink">{{$doctor->user->email}}</a> </span></p>
                                     </div>
@@ -56,10 +82,12 @@
                         </div>
                     </div>
                 @endforeach
+
             </div>
             <div class="row clearfix">
                 <div class="col-xs-12 text-center">
-                    <a href="#" class="btn btn-raised g-bg-cyan">Add Doctor</a>
+                    {{ $doctors->links() }}
+                    <!--a href="#" class="btn btn-raised g-bg-cyan">Add Doctor</a-->
                 </div>
             </div>
         </div>

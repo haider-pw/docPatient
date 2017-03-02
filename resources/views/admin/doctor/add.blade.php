@@ -5,11 +5,13 @@
 @section('styles')
         <!-- Dropzone Css -->
 
+
 <link href="{{ URL::asset('assets/admin/plugins/dropzone/dropzone.css')}}" rel="stylesheet">
-<link href="{{ URL::asset('assets/admin/plugins/bootstrap-select/css/bootstrap-select.css')}}" rel="stylesheet">
+
 <script src="{{ URL::asset('assets/admin/plugins/autosize/autosize.js')}}"></script> <!-- Autosize Plugin Js -->
 <script src="{{ URL::asset('assets/admin/plugins/momentjs/moment.js')}}"></script> <!-- Moment Plugin Js -->
 <script src="{{ URL::asset('assets/admin/plugins/dropzone/dropzone.js')}}"></script> <!-- Dropzone Plugin Js -->
+
 
 
 @endsection
