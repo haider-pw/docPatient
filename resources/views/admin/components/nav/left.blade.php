@@ -28,12 +28,11 @@
                        onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
                         <i class="zmdi zmdi-sign-in"></i></a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form>
                 </li>
             </ul>
-
         </div>
         <div class="quick-stats">
             <h5>Today Report</h5>

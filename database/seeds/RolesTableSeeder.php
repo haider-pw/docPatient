@@ -18,19 +18,23 @@ class RolesTableSeeder extends Seeder
         //Array to Seed in to the Database
         $roles = [
             [
-                'name'=> 'Super Admin',
+                'name'=> 'admin',
+                'label'=> 'Super Admin',
                 'description' => 'This Role will have Access to almost all the Modules of the Application.'
             ],
             [
-                'name'=> 'Doctor',
+                'name'=> 'doctor',
+                'label'=> 'Doctor',
                 'description' => 'This role will have access to the doctors modules'
             ],
             [
-                'name'=> 'Patient',
+                'name'=> 'patient',
+                'label'=> 'Patient',
                 'description' => 'This role will have access to the patients modules'
             ],
             [
-                'name'=> 'Guardian',
+                'name'=> 'guardian',
+                'label'=> 'Guardian',
                 'description' => 'This role will have access to the guardian modules'
             ]
         ];
