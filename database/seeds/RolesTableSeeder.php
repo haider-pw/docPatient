@@ -12,8 +12,8 @@ class RolesTableSeeder extends Seeder
     public function run()
     {
         //Empty Table to empty the records if already exist.
-//        DB::table('roles')->truncate();
-        DB::table('roles')->delete();
+        //DB::table('roles')->delete();
+        DB::table('roles')->truncate();
 
         //Array to Seed in to the Database
         $roles = [
