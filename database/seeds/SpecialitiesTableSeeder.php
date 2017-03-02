@@ -11,7 +11,8 @@ class SpecialitiesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('specialities')->delete();
+        DB::table('specialities')->truncate();
+        //DB::table('specialities')->delete();
 
         //Making an Array of Dummy Specialities for Now.
         $specialities = [

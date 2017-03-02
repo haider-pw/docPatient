@@ -12,7 +12,8 @@ use App\Doctor;
 class DoctorController extends Controller{
     public function index(){
         $doctors = Doctor::all();
-        return view('admin.doctor.list',compact('doctors'));
+       // dd($doctors);
+       return view('admin.doctor.list',compact('doctors'));
     }
 
     public function create(){

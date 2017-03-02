@@ -15,8 +15,9 @@
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
     $genderMale = App\Gender::first()->id;
+    $roleAdmin = App\Role::first()->id;
     return [
-        'role_id' => 1,
+        'role_id' => rand($roleAdmin, ($roleAdmin+3)),
         'gender_id'=>rand($genderMale,($genderMale+1)),
         'cnic'=>$faker->unique()->regexify('/\d{5}-\d{7}-\d/'),
         'name' => $faker->name,
@@ -31,6 +32,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 $factory->define(App\Doctor::class, function (Faker\Generator $faker) {
     $user = factory(App\User::class)->create();
     $genderMale = App\Gender::first()->id;
+    $user->assignRole('doctor');
     return [
         'user_id' => $user->id,
         'avatar' => ($user->gender_id === $genderMale)?'default_mDoctor.jpg':'default_fDoctor.jpg',

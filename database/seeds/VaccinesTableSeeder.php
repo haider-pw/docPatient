@@ -12,7 +12,9 @@ class VaccinesTableSeeder extends Seeder
     public function run()
     {
         //Remove Existing Records if Any.
-        DB::table('vaccines')->delete();
+        //DB::table('vaccines')->delete();
+        DB::table('vaccines')->truncate();
+
 
 
         //Array to Populate in Table
