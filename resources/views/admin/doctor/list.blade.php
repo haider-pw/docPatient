@@ -16,31 +16,28 @@
                 <h2>All Doctors</h2>
                 <small class="text-muted">Welcome to Swift application</small>
             </div>
-            <div class"filters">
-                <div class="row">
+            <div class"filter-container">
+                <div class="filters row">
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                         <div class="form-group">
                             <div class="form-line">
-                                <select class="form-control">
+                                <select class="form-control" onChange="window.location.href=this.value">
+                                    <option value="{{ url('doctors')}}">All Specialities</option>
                                     @foreach($specialities as $Speciality)
-                                        <option value="{{$Speciality->id}}" >{{$Speciality->name}}</option>
+                                        @php
+                                            $filter =  Request::get('Speciality');
+                                            $selected= '';
+                                            if( $filter == $Speciality->name)
+                                                $selected= 'Selected';
+
+                                        @endphp
+                                        <option value="{{ url('doctors')}}?Speciality={{$Speciality->name}}" {{$selected}}>{{$Speciality->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="form-group">
-                            <div class="form-line">
-                                <select class="form-control">
-                                    @foreach($specialities as $Speciality)
-                                        <option value="{{$Speciality->id}}" >{{$Speciality->name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
+                </div>
             </div>
             <div class="row clearfix">
 
@@ -87,7 +84,7 @@
             <div class="row clearfix">
                 <div class="col-xs-12 text-center">
                     {{ $doctors->links() }}
-                    <!--a href="#" class="btn btn-raised g-bg-cyan">Add Doctor</a-->
+                    <a href="#" class="btn btn-raised g-bg-cyan">Add Doctor</a>
                 </div>
             </div>
         </div>

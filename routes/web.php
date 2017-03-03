@@ -25,15 +25,21 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
         //Home or Dashboard of admin
         Route::get('/', 'DashboardController@index');
 
-        //Routes To Manage Doctors
-        Route::get('doctors','DoctorController@index');
-        Route::get('doctor/add','DoctorController@create');
-        Route::post('doctor/save','DoctorController@store');
     });
 
+    //Routes To Manage Doctors
+    Route::get('doctors','DoctorController@index');
+    Route::get('doctors/filtered','DoctorController@index');
+    Route::get('doctor/add','DoctorController@create');
+    Route::post('doctor/save','DoctorController@store');
+
+
+
     //Lists Childrent
-    Route::get('children', 'ChildrenController@index');
+    //Route::get('children', 'ChildrenController@index');
     //Lists Patients
-    Route::get('patients', 'PatientsController@index');
+    Route::get('patients', 'PatientController@index');
+
+
 
 });

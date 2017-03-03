@@ -52,7 +52,7 @@ class User extends Authenticatable
     }*/
 
     public function gender(){
-        return $this->hasOne(Gender::class);
+        return $this->hasOne(Gender::class,'id');
     }
 
 }
