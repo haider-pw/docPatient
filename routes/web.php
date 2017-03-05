@@ -28,7 +28,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
     });
 
     //Routes To Manage Doctors
-    Route::get('doctors','DoctorController@index');
+    Route::get('doctors','DoctorController@index')->name('doctors');
     Route::get('doctors/filtered','DoctorController@index');
     Route::get('doctor/add','DoctorController@create');
     Route::post('doctor/save','DoctorController@store');
@@ -38,7 +38,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
     //Lists Childrent
     //Route::get('children', 'ChildrenController@index');
     //Lists Patients
-    Route::get('patients', 'PatientController@index');
+    Route::get('patients', 'PatientController@index')->name('patients');
 
 
 
