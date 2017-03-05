@@ -30,7 +30,7 @@
             <h2>Add Doctor</h2>
             <small class="text-muted">Welcome to Swift application</small>
         </div>
-            {!! Form::open(['route' => 'doctor/save', 'class' => 'form']) !!}
+            {!! Form::open(['url' => 'doctor/save', 'class' => 'form']) !!}
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
