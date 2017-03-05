@@ -4,12 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Collective\Html\HtmlServiceProvider;
-use Collective\Html\FormFacade;
-use Collective\Html\HtmlFacade;
 use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
-
 
 //Use of multiple Models.
 use App;
@@ -22,7 +18,8 @@ class DoctorController extends Controller{
         $queryDoctor = Doctor::query()->join('users', 'users.id', '=', 'doctors.id');
         $queryDoctor->join('specialities', 'speciality_id', '=', 'specialities.id');
         $queryDoctor->orderBy('users.name','desc');
-        if($filter = Input::get('Speciality')) {
+        if(Input::get('Speciality')) {
+            $filter = Input::get('Speciality');
             $queryDoctor->where('specialities.name', '=', $filter);
         }
         $doctors = $queryDoctor->paginate(4);
@@ -31,8 +28,7 @@ class DoctorController extends Controller{
         }
 
         $specialities = Speciality::all();
-
-      return view('admin.doctor.list',compact('doctors','specialities'));
+        return view('admin.doctor.list',compact('doctors','specialities'));
     }
 
     public function create(){

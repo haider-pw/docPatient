@@ -42,7 +42,6 @@
                                 <div class="col-sm-6 col-xs-12">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            {!! Form::label('First Name') !!}
                                             {!! Form::text('first_name', null,
                                               ['class' => 'form-control',
                                                'placeholder' => 'First Name']) !!}
@@ -52,7 +51,9 @@
                                 <div class="col-sm-6 col-xs-12">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" name="last_name" placeholder="Last Name">
+                                            {!! Form::text('last_name', null,
+                                              ['class' => 'form-control',
+                                               'placeholder' => 'Last Name']) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -61,28 +62,36 @@
                                 <div class="col-sm-3 col-xs-12">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="datepicker form-control" name="d_o_b" placeholder="Date of Birth">
+                                            {!! Form::text('d_o_b', null,
+                                              ['class' => 'form-control',
+                                               'placeholder' => 'Date of Birth']) !!}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-3 col-xs-12">
                                     <div class="form-group drop-custum">
-                                        <select class="form-control show-tick">
-                                            <option value="">-- Gender --</option>
-                                            <option value="10">Male</option>
-                                            <option value="20">Female</option>
-                                        </select>
+                                        {!! Form::select('size',
+                                            [
+                                                '1' => 'Male',
+                                                '2' => 'Female'
+                                            ],
+                                        null,['class' => 'form-control', 'placeholder' => '-- Gender --'])!!}
                                     </div>
                                 </div>
                                 <div class="col-sm-3 col-xs-12">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <select class="form-control" name="specialities[]">
-                                                <option value="">Specialities</option>
-                                                @foreach($specialities as $Speciality)
-                                                    <option value="{{$Speciality->id}}">{{$Speciality->name}}</option>
-                                                @endforeach
-                                            </select>
+                                            @php
+                                            $specialitiesArray = array();
+                                            foreach($specialities as $Speciality){
+                                            $specialitiesArray[$Speciality->id] = $Speciality->name;
+                                            }
+                                            @endphp
+
+                                            {!! Form::select('specialities[]',
+                                            [
+                                                $specialitiesArray
+                                            ],['class' => 'form-control', 'placeholder' => 'Specialities','multiple' => true])!!}
                                         </div>
                                     </div>
                                 </div>
