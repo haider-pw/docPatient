@@ -14,7 +14,6 @@ use App\Speciality;
 
 class DoctorController extends Controller{
     public function index(){
-
         $queryDoctor = Doctor::query()->join('users', 'users.id', '=', 'doctors.id');
         $queryDoctor->join('specialities', 'speciality_id', '=', 'specialities.id');
         $queryDoctor->orderBy('users.name','desc');

@@ -8,43 +8,61 @@
                 <h2>All Patients</h2>
                 <small class="text-muted">Welcome to Swift applications</small>
             </div>
-
-            <div class="row clearfix">
-                @foreach($patients as $patient)
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="card all-patients">
-                            <div class="body">
-                                <div class="row">
-                                    <div class="col-md-4 col-sm-4 text-center m-b-0">
-                                        <a href="#" class="p-profile-pix">
-                                            <img src="{{avatarPath($patient->avatar, $patient)}}" alt="user" class="img-circle img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="col-md-8 col-sm-8 m-b-0">
-                                        <h5 class="m-b-0">{{$patient->user->name}} <a href="#" class="edit"><i class="zmdi zmdi-edit"></i></a></h5>
-                                        <small>
-                                            @foreach($patient->diseases as $disease)
-                                                {{ $loop->first ? '' : ', ' }}
-                                                {{$disease->name}}
-                                            @endforeach
-                                        </small>
-                                        <address class="m-t-10 m-b-0">
-                                            123 Folsom Ave, Suite 100 New York, CADGE 56824<br><br>
-                                            <abbr title="Phone">P:</abbr>
-                                        </address>
-                                    </div>
-                                </div>
+            <div class="card m-t-15">
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4">
+                            {!! Form::select('gender',
+                                            [
+                                                '1' => 'Male',
+                                                '2' => 'Female'
+                                            ],
+                                        null,['class' => 'form-control', 'placeholder' => '-- Gender --'])!!}
+                        </div>
+                        <div class="col-md-8 col-sm-9 text-right">
+                            <div class="btn-group">
+                                <button class="btn btn-raised btn-success btn-sm mr-5" id="change-view-today">today</button>
+                                <button class="btn btn-raised btn-default btn-sm mr-5" id="change-view-day">Day</button>
+                                <button class="btn btn-raised btn-default btn-sm mr-5" id="change-view-week">Week</button>
+                                <button class="btn btn-raised btn-default btn-sm mr-5" id="change-view-month">Month</button>
                             </div>
                         </div>
                     </div>
-                @endforeach
-            </div>
-            <div class="row clearfix">
-                <div class="col-xs-12 text-center">
-                    {{ $patients->links() }}
-                    <a href="#" class="btn btn-raised g-bg-cyan">Add Patient</a>
                 </div>
             </div>
+            @if(count($patients) > 0)
+                <section class="patientsListing">
+                    @include('admin.patient.load')
+                </section>
+            @endif
         </div>
     </section>
+@endsection
+
+@section('scripts')
+    <script type="text/javascript">
+        $(function() {
+            $('body').on('click', '.pagination a', function(e) {
+                e.preventDefault();
+
+                $('#load a').css('color', '#dfecf6');
+                $('#load').append('<img style="position: absolute; left: 0; top: 0; z-index: 100000;" src="{{URL::asset('assets/admin/images/rolling.gif')}}" />');
+
+                var url = $(this).attr('href');
+                getArticles(url);
+                window.history.pushState("", "", url);
+            });
+
+            function getArticles(url) {
+                $.ajax({
+                    url : url
+                }).done(function (data) {
+                    $('.patientsListing').html(data);
+                }).fail(function () {
+                    alert('Patients could not be loaded.');
+                });
+            }
+        });
+
+    </script>
 @endsection

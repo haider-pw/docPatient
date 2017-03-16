@@ -366,6 +366,7 @@
 <script src="{{URL::asset('assets/admin/bundles/libscripts.bundle.js')}}"></script> <!-- Lib Scripts Plugin Js -->
 <script src="{{URL::asset('assets/admin/bundles/vendorscripts.bundle.js')}}"></script> <!-- Lib Scripts Plugin Js -->
 <script src="{{URL::asset('assets/admin/bundles/mainscripts.bundle.js')}}"></script><!-- Custom Js -->
-<script src="{{URL::asset('assets/admin/js/pages/index.js')}}"></script>
+{{--<script src="{{URL::asset('assets/admin/js/pages/index.js')}}"></script>--}}
+@yield('scripts')
 </body>
 </html>
